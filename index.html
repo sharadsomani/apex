@@ -962,8 +962,11 @@
             font-weight: 600;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
-            border-radius: 2px;
+            border-radius: 30px;
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .cta-btn-coaching:hover {
@@ -979,13 +982,219 @@
             font-weight: 600;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
-            border-radius: 20px;
+            border-radius: 30px;
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .cta-btn-thrive:hover {
             background: var(--forest-primary);
             transform: translateY(-2px);
+        }
+
+        /* ─── MODAL ─── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 40, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal-box {
+            background: var(--white);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 560px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+            animation: modalIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.92) translateY(20px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-header {
+            padding: 2.5rem 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--cream);
+            position: relative;
+        }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        .modal-coaching .modal-tag { color: var(--gold); }
+        .modal-thrive  .modal-tag { color: var(--sage); }
+
+        .modal-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--navy-deep);
+            line-height: 1.2;
+        }
+
+        .modal-header p {
+            font-size: 0.9rem;
+            color: var(--slate);
+            margin-top: 0.4rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--cream);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--slate);
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--navy-deep);
+            color: var(--white);
+        }
+
+        .modal-body {
+            padding: 2rem 2.5rem 2.5rem;
+        }
+
+        .form-row {
+            margin-bottom: 1.3rem;
+        }
+
+        .form-row label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Work Sans', sans-serif;
+            color: var(--navy-deep);
+            background: var(--off-white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none;
+        }
+
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201,168,106,0.12);
+            background: var(--white);
+        }
+
+        .form-row textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .modal-submit {
+            width: 100%;
+            padding: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Work Sans', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        .modal-coaching .modal-submit {
+            background: var(--gold);
+            color: var(--navy-deep);
+        }
+
+        .modal-coaching .modal-submit:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .modal-thrive .modal-submit {
+            background: var(--sage);
+            color: var(--white);
+        }
+
+        .modal-thrive .modal-submit:hover {
+            background: var(--forest-primary);
+            transform: translateY(-2px);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .form-success-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-success h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--navy-deep);
+            margin-bottom: 0.8rem;
+        }
+
+        .form-success p {
+            font-size: 0.95rem;
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        .form-error-msg {
+            display: none;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
         }
 
         /* ─── FOOTER ─── */
@@ -1514,12 +1723,12 @@
             with a single conversation.
         </p>
         <div class="cta-buttons">
-            <a href="mailto:contact@apexleadership.sg" class="cta-btn-coaching">
+            <button class="cta-btn-coaching" onclick="openModal('coaching')">
                 Apex Coaching Consultation
-            </a>
-            <a href="mailto:thrive@apexleadership.sg" class="cta-btn-thrive">
+            </button>
+            <button class="cta-btn-thrive" onclick="openModal('thrive')">
                 Apex Thrive Enquiry
-            </a>
+            </button>
         </div>
     </div>
 </section>
@@ -1559,7 +1768,7 @@
                 <ul class="footer-links">
                     <li><a href="mailto:contact@apexleadership.sg">contact@apexleadership.sg</a></li>
                     <li><a href="mailto:thrive@apexleadership.sg">thrive@apexleadership.sg</a></li>
-                    <li><a href="#">LinkedIn — Sharad Somani</a></li>
+                    <li><a href="https://www.linkedin.com/in/sharadsomani" target="_blank" rel="noopener">LinkedIn — Sharad Somani</a></li>
                     <li><a href="#">Singapore</a></li>
                 </ul>
             </div>
@@ -1573,6 +1782,75 @@
         </div>
     </div>
 </footer>
+
+<!-- ══════════════ CONTACT MODAL ══════════════ -->
+<div id="contactModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box" id="modalBox">
+        <div class="modal-header">
+            <div class="modal-tag" id="modalTag">Apex Coaching</div>
+            <h3 id="modalTitle">Schedule a Consultation</h3>
+            <p id="modalSubtitle">We'll get back to you within 24 hours.</p>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-error-msg" id="formError">Something went wrong. Please try again or email us directly.</div>
+            <form id="contactForm" novalidate>
+                <input type="hidden" name="_cc" value="sharadsomani@hotmail.com">
+                <input type="hidden" name="_subject" id="formSubject" value="APEX Enquiry">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="form-row">
+                    <label for="programSelect">Program of Interest *</label>
+                    <select id="programSelect" name="Program of Interest" required>
+                        <optgroup label="─ Apex Coaching">
+                            <option value="Apex Coaching — Executive Coaching">Executive Coaching (3–6 months)</option>
+                            <option value="Apex Coaching — Leadership Workshops">Leadership Workshops</option>
+                            <option value="Apex Coaching — 2-Day Intensive">2-Day Intensive Program</option>
+                        </optgroup>
+                        <optgroup label="─ Apex Thrive">
+                            <option value="Apex Thrive — The Summit Experience">The Summit Experience (5 days)</option>
+                            <option value="Apex Thrive — The Forest Immersion">The Forest Immersion (3 days)</option>
+                            <option value="Apex Thrive — The 7-Day Reset">The 7-Day Reset</option>
+                            <option value="Apex Thrive — The Coastal Clarity">The Coastal Clarity Retreat</option>
+                            <option value="Apex Thrive — Yoga & Meditation Programs">Yoga &amp; Meditation Programs</option>
+                            <option value="Apex Thrive — Philosophy for Executives">Philosophy for Executives</option>
+                        </optgroup>
+                        <option value="General Enquiry">General Enquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="inputName">Full Name *</label>
+                    <input type="text" id="inputName" name="Name" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="inputEmail">Email Address *</label>
+                    <input type="email" id="inputEmail" name="Email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="inputPhone">Contact Number *</label>
+                    <input type="tel" id="inputPhone" name="Contact Number" placeholder="+65 XXXX XXXX" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="inputMessage">Message</label>
+                    <textarea id="inputMessage" name="Message" placeholder="Tell us about your leadership goals or any specific challenges you're facing…"></textarea>
+                </div>
+
+                <button type="submit" class="modal-submit" id="modalSubmitBtn">Send Enquiry</button>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+                <div class="form-success-icon">✅</div>
+                <h4>Message Sent!</h4>
+                <p>Thank you for reaching out. Sharad's team will be in touch within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     // Nav scroll effect
@@ -1603,6 +1881,114 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── MODAL ──
+    const modal       = document.getElementById('contactModal');
+    const modalBox    = document.getElementById('modalBox');
+    const programSel  = document.getElementById('programSelect');
+    const formError   = document.getElementById('formError');
+    const formSuccess = document.getElementById('formSuccess');
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn   = document.getElementById('modalSubmitBtn');
+
+    const config = {
+        coaching: {
+            tag:      'Apex Coaching',
+            title:    'Schedule a Consultation',
+            subtitle: 'Tell us about your leadership goals — we\'ll be in touch within 24 hours.',
+            subject:  'Apex Coaching Consultation Request',
+            endpoint: 'https://formsubmit.co/ajax/sharadsomani@gmail.com',
+            cssClass: 'modal-coaching',
+        },
+        thrive: {
+            tag:      'Apex Thrive',
+            title:    'Begin Your Wellness Journey',
+            subtitle: 'Share your retreat interests — our team will craft the perfect pathway for you.',
+            subject:  'Apex Thrive Retreat Enquiry',
+            endpoint: 'https://formsubmit.co/ajax/sharadsomani@gmail.com',
+            cssClass: 'modal-thrive',
+        }
+    };
+
+    let currentEndpoint = config.coaching.endpoint;
+
+    function openModal(type) {
+        const c = config[type] || config.coaching;
+        currentEndpoint = c.endpoint;
+
+        document.getElementById('modalTag').textContent      = c.tag;
+        document.getElementById('modalTitle').textContent    = c.title;
+        document.getElementById('modalSubtitle').textContent = c.subtitle;
+        document.getElementById('formSubject').value         = c.subject;
+
+        // Pre-select first option for the division
+        const opts = programSel.options;
+        for (let i = 0; i < opts.length; i++) {
+            if (opts[i].value.startsWith(c.tag)) {
+                programSel.selectedIndex = i;
+                break;
+            }
+        }
+
+        // Swap colour theme
+        modalBox.className = 'modal-box ' + c.cssClass;
+
+        // Reset state
+        contactForm.style.display = '';
+        formSuccess.style.display = 'none';
+        formError.style.display   = 'none';
+        contactForm.reset();
+
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    // Close on backdrop click
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+    // Close on Escape
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // Form submit
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Basic validation
+        const required = contactForm.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(el => { if (!el.value.trim()) { el.focus(); valid = false; } });
+        if (!valid) return;
+
+        submitBtn.disabled    = true;
+        submitBtn.textContent = 'Sending…';
+        formError.style.display = 'none';
+
+        const data = new FormData(this);
+
+        try {
+            const res = await fetch(currentEndpoint, {
+                method:  'POST',
+                headers: { 'Accept': 'application/json' },
+                body:    data
+            });
+
+            if (res.ok) {
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+            } else {
+                throw new Error('Server error');
+            }
+        } catch {
+            formError.style.display  = 'block';
+            submitBtn.disabled       = false;
+            submitBtn.textContent    = 'Send Enquiry';
+        }
+    });
 </script>
 </body>
 </html>
