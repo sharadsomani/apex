@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Your Leadership in 90 Days | APEX Executive Coaching</title>
+    <meta name="description" content="Evidence-based executive coaching for C-suite leaders. 90-day programs that deliver measurable impact. Schedule your diagnostic consultation today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight: #0D1B2A;
+            --navy: #1B263B;
+            --ocean: #415A77;
+            --steel: #778DA9;
+            --platinum: #E0E1DD;
+            --gold: #D4A574;
+            --gold-dark: #B8935F;
+            --cream: #F8F7F4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--midnight);
+            line-height: 1.6;
+            background: var(--cream);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        /* Hero Section */
+        .hero-landing {
+            background: linear-gradient(to bottom, var(--midnight) 0%, var(--navy) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-landing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(212, 165, 116, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 165, 116, 0.04) 0%, transparent 40%);
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 165, 116, 0.15);
+            color: var(--gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+        }
+        
+        .hero-landing h1 {
+            font-size: 4.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero-landing .highlight {
+            color: var(--gold);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-subtext {
+            font-size: 1.4rem;
+            color: var(--platinum);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .social-proof {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+        }
+        
+        .proof-item {
+            text-align: left;
+        }
+        
+        .proof-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.3rem;
+        }
+        
+        .proof-label {
+            font-size: 0.9rem;
+            color: var(--steel);
+            letter-spacing: 0.5px;
+        }
+        
+        /* Form Card */
+        .form-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+            border: 1px solid rgba(212, 165, 116, 0.1);
+        }
+        
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--midnight);
+        }
+        
+        .form-subtitle {
+            color: var(--ocean);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid var(--platinum);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: var(--gold);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .submit-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.4);
+        }
+        
+        .privacy-text {
+            font-size: 0.75rem;
+            color: var(--steel);
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-tag {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--ocean);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--cream);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .benefit-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--midnight);
+        }
+        
+        .benefit-text {
+            color: var(--ocean);
+            line-height: 1.7;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+        
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .process-step {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .step-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--midnight);
+        }
+        
+        .step-content p {
+            color: var(--ocean);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        /* Credentials */
+        .credentials {
+            padding: 6rem 2rem;
+            background: var(--midnight);
+            color: white;
+        }
+        
+        .credentials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .founder-image {
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--navy), var(--ocean));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--gold);
+            border: 3px solid var(--gold);
+        }
+        
+        .credentials-content h3 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .credentials-title {
+            font-size: 1.1rem;
+            color: var(--platinum);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .credentials-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .credentials-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--platinum);
+            font-size: 1.05rem;
+        }
+        
+        .credentials-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            padding: 6rem 2rem;
+            background: var(--gold);
+            text-align: center;
+        }
+        
+        .guarantee-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .guarantee h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .guarantee p {
+            font-size: 1.3rem;
+            color: var(--midnight);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+        
+        .guarantee-btn {
+            display: inline-block;
+            background: var(--midnight);
+            color: white;
+            padding: 1.3rem 3.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .guarantee-btn:hover {
+            background: var(--navy);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--cream);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-size: 1.4rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            color: var(--ocean);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            padding: 4rem 2rem;
+            background: var(--navy);
+            text-align: center;
+            color: white;
+        }
+        
+        .footer-cta p {
+            font-size: 0.95rem;
+            color: var(--platinum);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero-landing h1 {
+                font-size: 3rem;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-landing h1 {
+                font-size: 2.2rem;
+            }
+            .social-proof {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-landing">
+        <div class="hero-container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge">Evidence-Based Leadership Development</div>
+                    <h1>Transform Your Leadership in <span class="highlight">90 Days</span></h1>
+                    <p class="hero-subtext">
+                        Executive coaching for C-suite leaders who need strategic clarity, 
+                        decision discipline, and measurable organizational impact—not motivational workshops.
+                    </p>
+                    <div class="social-proof">
+                        <div class="proof-item">
+                            <div class="proof-number">20+</div>
+                            <div class="proof-label">Years Experience</div>
+                        </div>
+                        <div class="proof-item">
+                            <div class="proof-number">750+</div>
+                            <div class="proof-label">Research Studies</div>
+                        </div>
+                        <div class="proof-item">
+                            <div class="proof-number">100%</div>
+                            <div class="proof-label">Evidence-Based</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-card">
+                    <h2 class="form-title">Schedule Your Consultation</h2>
+                    <p class="form-subtitle">60-minute diagnostic session to design your customized program</p>
+                    <form id="leadForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Current Role *</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="ceo">CEO / Managing Director</option>
+                                <option value="cfo">CFO / Finance Director</option>
+                                <option value="coo">COO / Operations Director</option>
+                                <option value="director">Director / Senior Director</option>
+                                <option value="vp">VP / SVP</option>
+                                <option value="founder">Founder / Co-Founder</option>
+                                <option value="other">Other C-Suite</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="challenge">Primary Leadership Challenge</label>
+                            <textarea id="challenge" name="challenge" placeholder="Optional: What specific challenge are you facing?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Get Started Today</button>
+                        <p class="privacy-text">
+                            Your information is secure. We respect your privacy and will never share your details.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="benefits-container">
+            <div class="section-header">
+                <div class="section-tag">WHY CHOOSE APEX</div>
+                <h2 class="section-title">What Sets Us Apart</h2>
+                <p class="section-description">
+                    Evidence-based methodologies backed by 40+ years of research, 
+                    delivered by practitioners who've led in the most complex environments.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎯</span>
+                    <h3 class="benefit-title">Strategic Clarity</h3>
+                    <p class="benefit-text">
+                        Convert complexity into actionable insight. Make decisions faster with 
+                        greater confidence. Eliminate ambiguity that stalls performance.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📊</span>
+                    <h3 class="benefit-title">Measurable Impact</h3>
+                    <p class="benefit-text">
+                        Every program includes 90-day action plans, performance metrics, 
+                        and accountability systems. No fluff—just demonstrable ROI.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🔬</span>
+                    <h3 class="benefit-title">Evidence-Based</h3>
+                    <p class="benefit-text">
+                        Grounded in research from Harvard, Stanford, and 750+ validated 
+                        studies. Proven frameworks, not trendy theories.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">⚡</span>
+                    <h3 class="benefit-title">Practitioner-Led</h3>
+                    <p class="benefit-text">
+                        20+ years leading infrastructure, ESG, and transformation projects 
+                        across Asia-Pacific. Real experience, not just academic theory.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎭</span>
+                    <h3 class="benefit-title">Executive Presence</h3>
+                    <p class="benefit-text">
+                        Develop gravitas, board-level communication, and stakeholder 
+                        influence that elevates your impact immediately.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🚀</span>
+                    <h3 class="benefit-title">Performance Culture</h3>
+                    <p class="benefit-text">
+                        Build accountability systems, psychological safety, and high-performance 
+                        teams that deliver consistently under pressure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="process-container">
+            <div class="section-header">
+                <div class="section-tag">OUR PROCESS</div>
+                <h2 class="section-title">Your Journey to Excellence</h2>
+                <p class="section-description">
+                    A structured, evidence-based approach that transforms capability into competitive advantage
+                </p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Diagnostic Consultation</h3>
+                        <p>
+                            60-minute session to understand your context, challenges, and objectives. 
+                            We assess organizational maturity, leadership depth, and strategic priorities.
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Assessment & Design</h3>
+                        <p>
+                            360° leadership feedback, behavioral diagnostics, and stakeholder analysis. 
+                            We design a customized program aligned to your specific needs and sector context.
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Intensive Coaching</h3>
+                        <p>
+                            6-10 one-on-one sessions covering strategic clarity, decision-making, 
+                            executive presence, and organizational impact. Applied frameworks with real-world application.
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Implementation & Accountability</h3>
+                        <p>
+                            90-day action plans with measurable milestones. Regular check-ins and 
+                            accountability structures ensure sustained behavior change and organizational impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="credentials">
+        <div class="credentials-container">
+            <div class="section-header">
+                <div class="section-tag" style="color: var(--gold);">YOUR COACH</div>
+                <h2 class="section-title" style="color: white;">Led by Proven Excellence</h2>
+            </div>
+            <div class="credentials-grid">
+                <div class="founder-image">SS</div>
+                <div class="credentials-content">
+                    <h3>Sharad Somani</h3>
+                    <div class="credentials-title">
+                        Partner, KPMG in Singapore<br>
+                        Head of Infrastructure, KPMG Asia Pacific<br>
+                        Head of ESG Consulting
+                    </div>
+                    <ul class="credentials-list">
+                        <li>✓ 20+ years advising C-suite and boards across Asia-Pacific</li>
+                        <li>✓ Led infrastructure, energy, and ESG transformations in complex markets</li>
+                        <li>✓ Master in Management Studies (Finance) + Bachelor of Engineering</li>
+                        <li>✓ Expertise in strategic leadership, stakeholder management, and enterprise transformation</li>
+                        <li>✓ Proven track record in utility-scale projects and smart city deployments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="guarantee-container">
+            <h2>Our Commitment to Your Success</h2>
+            <p>
+                We don't measure success by sessions delivered. We measure by organizational impact. 
+                If you don't see measurable improvement in strategic clarity, decision-making, 
+                or team performance within 90 days, we'll work with you until you do.
+            </p>
+            <a href="#" onclick="document.getElementById('leadForm').scrollIntoView({behavior: 'smooth'}); return false;" class="guarantee-btn">
+                Schedule Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <div class="section-tag">FAQ</div>
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Who is this program for?</h3>
+                <p class="faq-answer">
+                    C-suite executives, senior directors, and high-potential leaders in corporate and 
+                    startup environments who need strategic clarity, enhanced decision-making, and 
+                    measurable organizational impact—not generic training.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How is this different from other executive coaching?</h3>
+                <p class="faq-answer">
+                    Every methodology is evidence-based, grounded in 40+ years of validated research. 
+                    Led by a practitioner with 20+ years of C-suite advisory experience. No motivational 
+                    content—just strategic frameworks with measurable ROI.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What is the time commitment?</h3>
+                <p class="faq-answer">
+                    Programs range from 3-6 months with 6-10 coaching sessions (90 minutes each). 
+                    Between sessions, expect 2-3 hours per week for reflection, application, and 
+                    implementation of strategic frameworks.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What outcomes can I expect?</h3>
+                <p class="faq-answer">
+                    Improved strategic alignment, faster decision cycles, enhanced executive presence, 
+                    stronger accountability systems, clearer board communication, and measurable 
+                    performance improvements within 90 days.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Do you work with international clients?</h3>
+                <p class="faq-answer">
+                    Yes. While based in Singapore, we work with executives across Asia-Pacific, 
+                    Middle East, and globally. Programs can be delivered in-person, virtual, or hybrid format.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="footer-cta">
+        <div class="guarantee-container">
+            <h2 style="color: white; margin-bottom: 1rem;">Ready to Transform Your Leadership?</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                Schedule your 60-minute diagnostic consultation today.
+            </p>
+            <a href="#" onclick="document.getElementById('leadForm').scrollIntoView({behavior: 'smooth'}); return false;" class="guarantee-btn">
+                Get Started Now
+            </a>
+            <p style="margin-top: 3rem; font-size: 0.9rem; color: var(--steel);">
+                © 2026 APEX Leadership Institute. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling (would connect to your CRM/email service)
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                role: document.getElementById('role').value,
+                challenge: document.getElementById('challenge').value
+            };
+            
+            // In production, send to your backend/CRM
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you! We\'ll contact you within 24 hours to schedule your diagnostic consultation.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

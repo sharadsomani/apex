@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Leadership Institute | Evidence-Based Executive Coaching & Leadership Development</title>
+    <meta name="description" content="Transform leadership capability into competitive advantage. Evidence-based executive coaching and leadership development for C-suite and senior leaders in Asia-Pacific.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-deep: #0A1628;
+            --navy-primary: #1A2F4F;
+            --navy-medium: #2C4A6E;
+            --gold-accent: #C9A86A;
+            --gold-light: #E5D4B5;
+            --slate: #64748B;
+            --slate-light: #94A3B8;
+            --off-white: #F8F9FA;
+            --pure-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--navy-deep);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--off-white);
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+        
+        .cta-nav {
+            background: var(--gold-accent);
+            color: var(--navy-deep);
+            padding: 0.7rem 1.8rem;
+            border-radius: 2px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-nav:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 168, 106, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 50%, var(--navy-medium) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(201, 168, 106, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201, 168, 106, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            color: var(--pure-white);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--slate-light);
+            max-width: 800px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            line-height: 1.8;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 2rem;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+        
+        .btn-primary {
+            background: var(--gold-accent);
+            color: var(--navy-deep);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(201, 168, 106, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--pure-white);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--gold-accent);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gold-accent);
+            color: var(--navy-deep);
+            transform: translateY(-3px);
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--navy-primary);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(201, 168, 106, 0.2);
+        }
+        
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: var(--pure-white);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--slate-light);
+            letter-spacing: 0.5px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 8rem 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-tag {
+            font-size: 0.9rem;
+            color: var(--gold-accent);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 3.5rem;
+            color: var(--navy-deep);
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--slate);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--pure-white);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--navy-deep);
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .founder-card {
+            background: linear-gradient(135deg, var(--navy-deep), var(--navy-primary));
+            padding: 3rem;
+            border-radius: 4px;
+            color: var(--pure-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(201, 168, 106, 0.1) 0%, transparent 70%);
+        }
+        
+        .founder-name {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold-accent);
+        }
+        
+        .founder-title {
+            font-size: 1rem;
+            color: var(--slate-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .founder-bio {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--off-white);
+        }
+        
+        /* Programs Section */
+        .programs {
+            background: var(--off-white);
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .program-card {
+            background: var(--pure-white);
+            padding: 3rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(10, 22, 40, 0.08);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 22, 40, 0.12);
+            border-color: var(--gold-accent);
+        }
+        
+        .program-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--navy-deep);
+        }
+        
+        .program-description {
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .program-price {
+            font-size: 1.1rem;
+            color: var(--gold-accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .program-features li {
+            padding: 0.5rem 0;
+            color: var(--slate);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .program-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold-accent);
+            font-weight: bold;
+        }
+        
+        .btn-outline {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--navy-deep);
+            color: var(--navy-deep);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: var(--navy-deep);
+            color: var(--pure-white);
+        }
+        
+        /* Evidence Section */
+        .evidence {
+            background: var(--pure-white);
+        }
+        
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .evidence-card {
+            padding: 2.5rem;
+            background: var(--off-white);
+            border-left: 4px solid var(--gold-accent);
+        }
+        
+        .evidence-source {
+            font-size: 0.9rem;
+            color: var(--gold-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .evidence-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--navy-deep);
+        }
+        
+        .evidence-description {
+            color: var(--slate);
+            line-height: 1.7;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--navy-deep), var(--navy-primary));
+            color: var(--pure-white);
+        }
+        
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial-content {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: var(--off-white);
+        }
+        
+        .testimonial-author {
+            font-size: 1.1rem;
+            color: var(--gold-accent);
+            font-weight: 600;
+        }
+        
+        .testimonial-role {
+            font-size: 0.95rem;
+            color: var(--slate-light);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--gold-accent);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 3.5rem;
+            color: var(--navy-deep);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            color: var(--navy-primary);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-dark {
+            background: var(--navy-deep);
+            color: var(--pure-white);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 2px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-dark:hover {
+            background: var(--navy-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(10, 22, 40, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy-deep);
+            color: var(--slate-light);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .footer-description {
+            line-height: 1.7;
+            color: var(--slate-light);
+        }
+        
+        .footer-title {
+            color: var(--pure-white);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--slate-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold-accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(201, 168, 106, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--slate);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3.5rem; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .evidence-grid { grid-template-columns: 1fr; }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.3rem; }
+            .nav-links { display: none; }
+            .section-title { font-size: 2.5rem; }
+            .stats-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">APEX</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#evidence">Evidence</a></li>
+                <li><a href="#contact" class="cta-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Leadership<br>Into Competitive Advantage</h1>
+            <div class="hero-subtitle">Evidence-Based Executive Coaching & Leadership Development</div>
+            <p class="hero-description">
+                We don't deliver motivational workshops. We engineer strategic clarity, decision discipline, 
+                and high-performance cultures that drive measurable organizational impact.
+            </p>
+            <div class="hero-cta">
+                <a href="#programs" class="btn-primary">Explore Programs</a>
+                <a href="#contact" class="btn-secondary">Schedule Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years Executive Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">750+</div>
+                <div class="stat-label">Validated Research Studies</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Evidence-Based Frameworks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$60B</div>
+                <div class="stat-label">Global Leadership Market</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-tag">WHO WE ARE</div>
+                    <h2>Leadership Development<br>Grounded in Evidence</h2>
+                    <p>
+                        APEX Leadership Institute combines world-class research from Harvard Business School, 
+                        Stanford GSB, and leading consultancies with 20+ years of practitioner experience in 
+                        Asia-Pacific's most complex environments.
+                    </p>
+                    <p>
+                        We partner with C-suite executives, senior leaders, and high-potential talent to build 
+                        strategic clarity, accelerate decision-making, and create sustainable high-performance cultures.
+                    </p>
+                    <p>
+                        Every program is designed with measurable outcomes, rigorous methodologies, and 
+                        practical application—no generic content, no motivational fluff.
+                    </p>
+                </div>
+                <div class="founder-card">
+                    <h3 class="founder-name">Sharad Somani</h3>
+                    <div class="founder-title">
+                        Founder & Principal Coach<br>
+                        Partner, KPMG in Singapore<br>
+                        Head of Infrastructure, KPMG Asia Pacific<br>
+                        Head of ESG Consulting
+                    </div>
+                    <p class="founder-bio">
+                        Over 20 years advising governments, C-suites, and boards across infrastructure, 
+                        energy transition, and digital transformation. Master in Management Studies (Finance), 
+                        Bachelor of Engineering. Led teams through utility-scale renewable projects, smart city 
+                        deployments, and enterprise transformations across Southeast Asia and Middle East.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">OUR PROGRAMS</div>
+                <h2 class="section-title">Choose Your Path to Excellence</h2>
+                <p class="section-description">
+                    From one-on-one executive coaching to enterprise-wide transformation, 
+                    every program is customized to your organizational context and leadership challenges.
+                </p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon">🎯</div>
+                    <h3 class="program-title">Executive Coaching</h3>
+                    <p class="program-description">
+                        Intensive 3-6 month coaching programs for C-suite and senior executives 
+                        focused on strategic clarity, executive presence, and organizational impact.
+                    </p>
+                    <div class="program-price">From SGD $12,000</div>
+                    <ul class="program-features">
+                        <li>6-10 one-on-one sessions</li>
+                        <li>360° Leadership Assessment</li>
+                        <li>Personal Leadership Blueprint</li>
+                        <li>90-Day Action Plan</li>
+                        <li>12-Month Impact Roadmap</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Learn More</a>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">⚡</div>
+                    <h3 class="program-title">Leadership Workshops</h3>
+                    <p class="program-description">
+                        Full-day immersive workshops covering strategic clarity, high-performance 
+                        leadership, and executive presence for senior management teams.
+                    </p>
+                    <div class="program-price">From SGD $18,000</div>
+                    <ul class="program-features">
+                        <li>Strategic Clarity Program</li>
+                        <li>High-Performance Leadership</li>
+                        <li>Executive Presence & Influence</li>
+                        <li>Applied simulations</li>
+                        <li>Real-world case studies</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Learn More</a>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">🚀</div>
+                    <h3 class="program-title">2-Day Intensive</h3>
+                    <p class="program-description">
+                        Comprehensive immersive program combining team performance mastery 
+                        with enterprise-level strategic thinking and execution.
+                    </p>
+                    <div class="program-price">From SGD $38,000</div>
+                    <ul class="program-features">
+                        <li>Team performance systems</li>
+                        <li>Enterprise thinking frameworks</li>
+                        <li>Crisis simulations</li>
+                        <li>Influence mapping</li>
+                        <li>90-Day execution blueprint</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evidence Section -->
+    <section id="evidence" class="evidence">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">THE EVIDENCE BASE</div>
+                <h2 class="section-title">Research-Validated Methodologies</h2>
+                <p class="section-description">
+                    Every framework, every tool, every approach is grounded in peer-reviewed research 
+                    and proven effectiveness in real-world applications.
+                </p>
+            </div>
+            <div class="evidence-grid">
+                <div class="evidence-card">
+                    <div class="evidence-source">Harvard Business School</div>
+                    <h3 class="evidence-title">Leadership Development ROI Framework</h3>
+                    <p class="evidence-description">
+                        65 evidence-informed strategies drawn from systematic reviews. Organizations 
+                        invest ~$60B annually—we ensure measurable ROI through gold-standard design.
+                    </p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-source">40+ Years Research</div>
+                    <h3 class="evidence-title">The Leadership Challenge®</h3>
+                    <p class="evidence-description">
+                        Validated in 750+ independent studies with 8 million respondents. Demonstrates 
+                        proven impact on leader effectiveness and employee engagement.
+                    </p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-source">Meta-Analysis</div>
+                    <h3 class="evidence-title">Transformational Leadership Research</h3>
+                    <p class="evidence-description">
+                        Medium to large effect sizes on performance, well-being, and organizational 
+                        outcomes. The most empirically validated leadership approach.
+                    </p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-source">Implementation Science</div>
+                    <h3 class="evidence-title">Leadership for Evidence-Based Practice</h3>
+                    <p class="evidence-description">
+                        Strategic and functional leadership behaviors essential for institutionalizing 
+                        change. Longitudinal studies confirm leadership shapes organizational climate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" style="color: var(--gold-light);">CLIENT IMPACT</div>
+                <h2 class="section-title" style="color: var(--pure-white);">What Leaders Say</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-content">
+                    "The most demanding clients teach you the best. When you deliver successfully, 
+                    you earn their trust and forge life-long partnerships. True character comes out 
+                    when you stand with your client and say, 'Let's ride through this together.'"
+                </div>
+                <div class="testimonial-author">Sharad Somani</div>
+                <div class="testimonial-role">Founder, APEX Leadership Institute</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Leadership?</h2>
+            <p>
+                Begin with a 60-minute diagnostic consultation. We'll design a customized 
+                solution aligned to your organizational maturity, sector pressures, and strategic objectives.
+            </p>
+            <a href="mailto:contact@apexleadership.sg" class="btn-dark">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">APEX</div>
+                    <p class="footer-description">
+                        Evidence-based executive coaching and leadership development for 
+                        C-suite and senior leaders across Asia-Pacific.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#programs">Executive Coaching</a></li>
+                        <li><a href="#programs">Leadership Workshops</a></li>
+                        <li><a href="#programs">2-Day Intensive</a></li>
+                        <li><a href="#programs">Enterprise Partnership</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#evidence">Research Base</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@apexleadership.sg">contact@apexleadership.sg</a></li>
+                        <li><a href="tel:+6512345678">+65 [Phone]</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Singapore</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APEX Leadership Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

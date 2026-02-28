@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX | Executive Coaching & Holistic Leadership by Sharad Somani</title>
+    <meta name="description" content="APEX combines elite executive coaching with holistic wellness to develop complete leaders. Led by Sharad Somani, Partner at KPMG Singapore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Core palette */
+            --navy-deep: #0A1628;
+            --navy-primary: #1A2F4F;
+            --navy-medium: #2C4A6E;
+            --gold: #C9A86A;
+            --gold-light: #E5D4B5;
+            --forest-deep: #1A3A2E;
+            --forest-primary: #2F5D4F;
+            --sage: #6B8F71;
+            --earth: #A67B5B;
+            --sand: #D4A574;
+            --cream: #F8F6EF;
+            --mist: #E8EDE6;
+            --off-white: #F9F9F7;
+            --slate: #64748B;
+            --slate-light: #94A3B8;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--navy-deep);
+            line-height: 1.7;
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.2;
+        }
+
+        /* ─── NAVIGATION ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.4rem 0;
+            transition: all 0.4s ease;
+            background: rgba(10, 22, 40, 0.0);
+        }
+
+        nav.scrolled {
+            background: rgba(10, 22, 40, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-logo-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 4px;
+            line-height: 1;
+        }
+
+        .nav-logo-sub {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-badge {
+            background: rgba(201, 168, 106, 0.15);
+            border: 1px solid rgba(201,168,106,0.4);
+            color: var(--gold);
+            padding: 0.5rem 1.3rem;
+            border-radius: 2px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .nav-badge:hover {
+            background: var(--gold) !important;
+            color: var(--navy-deep) !important;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--navy-deep);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 15% 40%, rgba(42, 93, 79, 0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 20%, rgba(201, 168, 106, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 60% 85%, rgba(44, 74, 110, 0.4) 0%, transparent 50%);
+        }
+
+        .hero-line-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, transparent, var(--gold) 30%, var(--sage) 70%, transparent);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 3rem 4rem;
+            width: 100%;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-eyebrow-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-eyebrow span {
+            font-size: 0.78rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 6.5rem;
+            color: var(--white);
+            line-height: 1.0;
+            margin-bottom: 1rem;
+            max-width: 900px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: rgba(255,255,255,0.55);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 680px;
+            line-height: 1.9;
+            margin-bottom: 3.5rem;
+        }
+
+        .hero-pillars {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .hero-pillar {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1.2rem 2rem;
+            border-radius: 2px;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .hero-pillar:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--gold);
+        }
+
+        .pillar-label {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .pillar-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy-deep);
+            padding: 1.1rem 2.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201,168,106,0.35);
+        }
+
+        .btn-ghost {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn-ghost::after {
+            content: '→';
+            transition: transform 0.3s;
+        }
+
+        .btn-ghost:hover {
+            color: var(--gold);
+        }
+
+        .btn-ghost:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* ─── STATS ─── */
+        .stats-strip {
+            background: var(--navy-primary);
+            border-top: 1px solid rgba(201,168,106,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 3rem 0;
+        }
+
+        .stats-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-lbl {
+            font-size: 0.82rem;
+            color: var(--slate-light);
+            letter-spacing: 0.5px;
+        }
+
+        /* ─── SECTION COMMONS ─── */
+        .section {
+            padding: 8rem 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .eyebrow-line {
+            width: 30px;
+            height: 2px;
+        }
+
+        .eyebrow span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow.gold .eyebrow-line { background: var(--gold); }
+        .eyebrow.gold span { color: var(--gold); }
+        .eyebrow.sage .eyebrow-line { background: var(--sage); }
+        .eyebrow.sage span { color: var(--sage); }
+
+        /* ─── ABOUT SHARAD ─── */
+        .about-sharad {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .profile-visual {
+            position: sticky;
+            top: 8rem;
+        }
+
+        .profile-card {
+            background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-primary) 60%, var(--forest-deep) 100%);
+            border-radius: 4px;
+            padding: 3.5rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,168,106,0.12), transparent 70%);
+        }
+
+        .profile-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--sage));
+        }
+
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--earth));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 1.8rem;
+            box-shadow: 0 0 0 3px rgba(201,168,106,0.3);
+        }
+
+        .profile-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            font-size: 0.88rem;
+            color: var(--gold-light);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .profile-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin-bottom: 1.8rem;
+        }
+
+        .profile-credentials {
+            list-style: none;
+        }
+
+        .profile-credentials li {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            padding: 0.55rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+        }
+
+        .profile-credentials li:last-child { border-bottom: none; }
+
+        .cred-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+            margin-top: 0.45rem;
+        }
+
+        .about-content h2 {
+            font-size: 3.5rem;
+            color: var(--navy-deep);
+            margin-bottom: 2rem;
+            line-height: 1.15;
+        }
+
+        .about-lead {
+            font-size: 1.2rem;
+            color: var(--navy-medium);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            font-weight: 400;
+        }
+
+        .about-body {
+            font-size: 1rem;
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .quote-block {
+            margin: 2.5rem 0;
+            padding: 2rem 2.5rem;
+            border-left: 3px solid var(--gold);
+            background: var(--cream);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .quote-block p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--navy-primary);
+            line-height: 1.7;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            background: var(--cream);
+            color: var(--navy-medium);
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 2px;
+            border: 1px solid rgba(10,22,40,0.1);
+        }
+
+        /* ─── DIVISIONS ─── */
+        .divisions {
+            background: var(--cream);
+        }
+
+        .divisions-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .divisions-header h2 {
+            font-size: 3.8rem;
+            color: var(--navy-deep);
+            margin-bottom: 1rem;
+        }
+
+        .divisions-header p {
+            font-size: 1.15rem;
+            color: var(--slate);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+
+        .divisions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .division-card {
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .division-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .division-header {
+            padding: 3.5rem 3.5rem 2.5rem;
+            position: relative;
+        }
+
+        .division-coaching .division-header {
+            background: linear-gradient(135deg, var(--navy-deep), var(--navy-primary));
+        }
+
+        .division-thrive .division-header {
+            background: linear-gradient(135deg, var(--forest-deep), var(--forest-primary));
+        }
+
+        .division-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .division-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+        }
+
+        .division-coaching .division-badge {
+            background: rgba(201,168,106,0.2);
+            color: var(--gold);
+            border: 1px solid rgba(201,168,106,0.4);
+        }
+
+        .division-thrive .division-badge {
+            background: rgba(212,165,116,0.2);
+            color: var(--sand);
+            border: 1px solid rgba(212,165,116,0.4);
+        }
+
+        .division-title {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 0.8rem;
+        }
+
+        .division-subtitle {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+        }
+
+        .division-body {
+            background: var(--white);
+            padding: 3rem 3.5rem;
+        }
+
+        .division-body p {
+            font-size: 1rem;
+            color: var(--slate);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .offering-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .offering-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--cream);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.92rem;
+            color: var(--navy-medium);
+        }
+
+        .offering-list li:last-child { border-bottom: none; }
+
+        .offering-dot-coaching {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .offering-dot-thrive {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sage);
+            flex-shrink: 0;
+        }
+
+        .btn-coaching {
+            display: inline-block;
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .btn-coaching:hover {
+            background: var(--navy-medium);
+            transform: translateY(-2px);
+        }
+
+        .btn-thrive {
+            display: inline-block;
+            background: var(--forest-deep);
+            color: var(--white);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .btn-thrive:hover {
+            background: var(--forest-primary);
+            transform: translateY(-2px);
+        }
+
+        /* ─── APPROACH ─── */
+        .approach {
+            background: var(--white);
+        }
+
+        .approach-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .approach-content h2 {
+            font-size: 3.5rem;
+            color: var(--navy-deep);
+            margin-bottom: 2rem;
+            line-height: 1.15;
+        }
+
+        .approach-content p {
+            font-size: 1.05rem;
+            color: var(--slate);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillars-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .pillar-box {
+            padding: 2rem;
+            border-radius: 4px;
+        }
+
+        .pillar-coaching {
+            background: linear-gradient(135deg, var(--navy-deep), var(--navy-primary));
+            grid-column: span 2;
+        }
+
+        .pillar-thrive {
+            background: linear-gradient(135deg, var(--forest-deep), var(--forest-primary));
+            grid-column: span 2;
+        }
+
+        .pillar-mind { background: var(--cream); }
+        .pillar-body { background: var(--mist); }
+
+        .pillar-box-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .pillar-box-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-coaching .pillar-box-title,
+        .pillar-thrive .pillar-box-title {
+            color: var(--white);
+        }
+
+        .pillar-mind .pillar-box-title,
+        .pillar-body .pillar-box-title {
+            color: var(--navy-deep);
+        }
+
+        .pillar-box-text {
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .pillar-coaching .pillar-box-text,
+        .pillar-thrive .pillar-box-text {
+            color: rgba(255,255,255,0.65);
+        }
+
+        .pillar-mind .pillar-box-text,
+        .pillar-body .pillar-box-text {
+            color: var(--slate);
+        }
+
+        /* ─── EVIDENCE ─── */
+        .evidence {
+            background: var(--navy-deep);
+            color: var(--white);
+        }
+
+        .evidence-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .evidence-header h2 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .evidence-header p {
+            color: var(--slate-light);
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .evidence-card {
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .evidence-card:hover {
+            border-color: rgba(201,168,106,0.3);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .evidence-source {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .evidence-coaching .evidence-source { color: var(--gold); }
+        .evidence-thrive .evidence-source { color: var(--sage); }
+
+        .evidence-card h3 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 0.8rem;
+        }
+
+        .evidence-card p {
+            font-size: 0.92rem;
+            color: var(--slate-light);
+            line-height: 1.8;
+        }
+
+        /* ─── TESTIMONIAL ─── */
+        .testimonial {
+            background: var(--cream);
+            padding: 7rem 0;
+        }
+
+        .testimonial-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            text-align: center;
+        }
+
+        .testimonial-quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            color: var(--gold);
+            line-height: 0.5;
+            margin-bottom: 2rem;
+            opacity: 0.4;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--navy-deep);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--navy-medium);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ─── CTA ─── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 50%, var(--forest-deep) 100%);
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(201,168,106,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(107,143,113,0.08) 0%, transparent 50%);
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 3.5rem;
+            line-height: 1.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-coaching {
+            background: var(--gold);
+            color: var(--navy-deep);
+            padding: 1.1rem 2.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .cta-btn-coaching:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .cta-btn-thrive {
+            background: var(--sage);
+            color: var(--white);
+            padding: 1.1rem 2.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .cta-btn-thrive:hover {
+            background: var(--forest-primary);
+            transform: translateY(-2px);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--navy-deep);
+            padding: 5rem 0 2.5rem;
+            border-top: 1px solid rgba(201,168,106,0.15);
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand-tagline {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.9rem;
+            color: var(--slate-light);
+            line-height: 1.9;
+        }
+
+        .footer-col-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col-title.coaching-accent { color: var(--gold); }
+        .footer-col-title.thrive-accent { color: var(--sage); }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            font-size: 0.88rem;
+            color: var(--slate-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy {
+            font-size: 0.82rem;
+            color: var(--slate);
+        }
+
+        .footer-divisions {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-division-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            border-radius: 2px;
+        }
+
+        .fd-coaching {
+            background: rgba(201,168,106,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(201,168,106,0.2);
+        }
+
+        .fd-thrive {
+            background: rgba(107,143,113,0.1);
+            color: var(--sage);
+            border: 1px solid rgba(107,143,113,0.2);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1100px) {
+            .hero h1 { font-size: 4.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .profile-visual { position: static; }
+            .divisions-grid { grid-template-columns: 1fr; }
+            .approach-inner { grid-template-columns: 1fr; }
+            .evidence-grid { grid-template-columns: 1fr 1fr; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero-pillars { flex-direction: column; }
+            .nav-links { display: none; }
+            .evidence-grid { grid-template-columns: 1fr; }
+            .pillars-visual { grid-template-columns: 1fr; }
+            .pillar-coaching,
+            .pillar-thrive { grid-column: auto; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        /* ─── SCROLL ANIMATIONS ─── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <div class="nav-logo">
+            <div class="nav-logo-main">APEX</div>
+            <div class="nav-logo-sub">Leadership &amp; Wellness</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About Sharad</a></li>
+            <li><a href="#divisions">Our Divisions</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#evidence">Research</a></li>
+            <li><a href="#contact" class="nav-badge">Work With Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line-left"></div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <div class="hero-eyebrow-line"></div>
+            <span>Singapore &amp; Asia-Pacific</span>
+        </div>
+        <h1>Complete<br>Leadership <em>Excellence</em></h1>
+        <div class="hero-tagline">Where Strategic Mastery Meets Holistic Vitality</div>
+        <p class="hero-description">
+            APEX brings together two distinct disciplines under one vision: evidence-based executive coaching
+            that sharpens minds, and transformative wellness experiences that restore souls.
+            Led by Sharad Somani—20+ years at the apex of Asia-Pacific leadership.
+        </p>
+
+        <div class="hero-pillars">
+            <div class="hero-pillar">
+                <div class="pillar-label">Division I</div>
+                <div class="pillar-name">Apex Coaching</div>
+            </div>
+            <div class="hero-pillar">
+                <div class="pillar-label">Division II</div>
+                <div class="pillar-name">Apex Thrive</div>
+            </div>
+        </div>
+
+        <div class="hero-cta">
+            <a href="#divisions" class="btn-primary">Explore Divisions</a>
+            <a href="#about" class="btn-ghost">Meet Sharad Somani</a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ STATS ══════════════ -->
+<div class="stats-strip">
+    <div class="stats-inner">
+        <div class="stat">
+            <div class="stat-num">20+</div>
+            <div class="stat-lbl">Years of C-Suite Advisory Experience</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">750+</div>
+            <div class="stat-lbl">Validated Research Studies Applied</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">100%</div>
+            <div class="stat-lbl">Evidence-Based Frameworks</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">4</div>
+            <div class="stat-lbl">Flagship Retreat Experiences</div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════ ABOUT SHARAD ══════════════ -->
+<section id="about" class="section about-sharad">
+    <div class="container">
+        <div class="about-grid">
+            <!-- Profile Card -->
+            <div class="profile-visual fade-in">
+                <div class="profile-card">
+                    <div class="profile-avatar">SS</div>
+                    <div class="profile-name">Sharad Somani</div>
+                    <div class="profile-title">
+                        Founder &amp; Principal Coach, APEX<br>
+                        Partner — KPMG in Singapore<br>
+                        Head of Infrastructure, KPMG Asia Pacific<br>
+                        Head of ESG Consulting
+                    </div>
+                    <div class="profile-divider"></div>
+                    <ul class="profile-credentials">
+                        <li>
+                            <span class="cred-dot"></span>
+                            Master in Management Studies (Finance) + Bachelor of Engineering
+                        </li>
+                        <li>
+                            <span class="cred-dot"></span>
+                            20+ years advising governments, C-suites &amp; boards across Asia-Pacific
+                        </li>
+                        <li>
+                            <span class="cred-dot"></span>
+                            Led utility-scale renewable energy &amp; smart city deployments
+                        </li>
+                        <li>
+                            <span class="cred-dot"></span>
+                            Expert in infrastructure, ESG, and enterprise transformation
+                        </li>
+                        <li>
+                            <span class="cred-dot"></span>
+                            Deep experience across Southeast Asia &amp; Middle East markets
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="about-content fade-in">
+                <div class="eyebrow gold">
+                    <div class="eyebrow-line"></div>
+                    <span>Founder's Story</span>
+                </div>
+                <h2>The Practitioner<br>Behind the Vision</h2>
+                <p class="about-lead">
+                    Sharad Somani doesn't teach leadership from a textbook. He has lived it—steering
+                    complex infrastructure projects across fourteen countries, navigating boardroom
+                    dynamics at the highest levels, and witnessing first-hand what separates leaders
+                    who endure from those who merely survive.
+                </p>
+                <p class="about-body">
+                    At KPMG Singapore, Sharad leads one of the region's most consequential advisory
+                    practices—infrastructure, energy transition, and ESG consulting—where every
+                    engagement demands clarity under pressure, strategic precision, and the ability
+                    to unite diverse stakeholders around a common vision. That experience became the
+                    foundation for APEX.
+                </p>
+                <p class="about-body">
+                    But Sharad's philosophy of leadership extends beyond boardrooms. Having seen the
+                    toll that relentless high performance takes on even the most capable executives,
+                    he became equally committed to the question of sustainability: how do great
+                    leaders continue to lead brilliantly—for decades, not quarters?
+                </p>
+
+                <div class="quote-block">
+                    <p>"The most demanding clients teach you the best. When you deliver successfully,
+                    you earn their trust and forge life-long partnerships. True character comes out
+                    when you stand with your client and say, 'Let's ride through this together.'"</p>
+                </div>
+
+                <p class="about-body">
+                    APEX is the synthesis of both answers: rigorous, evidence-based executive coaching
+                    through <strong>Apex Coaching</strong>, and nature-immersive, holistic renewal
+                    through <strong>Apex Thrive</strong>. Together they form a complete system for
+                    leaders who refuse to choose between performance and wellbeing.
+                </p>
+
+                <div class="expertise-tags">
+                    <span class="tag">Strategic Leadership</span>
+                    <span class="tag">Infrastructure &amp; Energy</span>
+                    <span class="tag">ESG Consulting</span>
+                    <span class="tag">Executive Coaching</span>
+                    <span class="tag">Asia-Pacific Markets</span>
+                    <span class="tag">Board Advisory</span>
+                    <span class="tag">Stakeholder Management</span>
+                    <span class="tag">Enterprise Transformation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ DIVISIONS ══════════════ -->
+<section id="divisions" class="section divisions">
+    <div class="container">
+        <div class="divisions-header fade-in">
+            <div class="eyebrow gold" style="justify-content: center;">
+                <div class="eyebrow-line"></div>
+                <span>Our Two Divisions</span>
+                <div class="eyebrow-line"></div>
+            </div>
+            <h2>Two Paths.<br>One Complete Leader.</h2>
+            <p>
+                APEX operates two complementary divisions. Whether your priority is sharpening
+                strategic edge or restoring peak vitality, we have a world-class path for you.
+            </p>
+        </div>
+
+        <div class="divisions-grid">
+            <!-- APEX COACHING -->
+            <div class="division-card division-coaching fade-in">
+                <div class="division-header">
+                    <span class="division-icon">🎯</span>
+                    <div class="division-badge">Division I</div>
+                    <h3 class="division-title">Apex Coaching</h3>
+                    <p class="division-subtitle">Evidence-Based Executive Coaching &amp; Leadership Development for C-Suite Leaders</p>
+                </div>
+                <div class="division-body">
+                    <p>
+                        Apex Coaching delivers rigorous, research-validated leadership development for
+                        C-suite executives and senior leaders who need strategic clarity, decision
+                        discipline, and measurable organizational impact—not motivational workshops.
+                    </p>
+                    <ul class="offering-list">
+                        <li><span class="offering-dot-coaching"></span> Executive Coaching (3–6 months) — from SGD $12,000</li>
+                        <li><span class="offering-dot-coaching"></span> Leadership Workshops (full-day) — from SGD $18,000</li>
+                        <li><span class="offering-dot-coaching"></span> 2-Day Intensive Program — from SGD $38,000</li>
+                        <li><span class="offering-dot-coaching"></span> 360° Leadership Assessment &amp; Blueprint</li>
+                        <li><span class="offering-dot-coaching"></span> 90-Day Action Plans with Accountability Systems</li>
+                        <li><span class="offering-dot-coaching"></span> Board-Level Communication &amp; Executive Presence</li>
+                    </ul>
+                    <a href="Apex Coaching /apex_leadership_website.html" class="btn-coaching">Explore Apex Coaching →</a>
+                </div>
+            </div>
+
+            <!-- APEX THRIVE -->
+            <div class="division-card division-thrive fade-in">
+                <div class="division-header">
+                    <span class="division-icon">🌿</span>
+                    <div class="division-badge">Division II</div>
+                    <h3 class="division-title">Apex Thrive</h3>
+                    <p class="division-subtitle">Holistic Leadership Through Mind, Body &amp; Soul — Wilderness Retreats &amp; Contemplative Practice</p>
+                </div>
+                <div class="division-body">
+                    <p>
+                        Apex Thrive recognizes that leadership brilliance isn't built on burnout.
+                        We offer nature-immersive retreats, yoga, meditation, and philosophical
+                        inquiry that restore vitality and sustain peak performance for decades—not quarters.
+                    </p>
+                    <ul class="offering-list">
+                        <li><span class="offering-dot-thrive"></span> The Summit Experience (5 days) — SGD $8,500–$12,000</li>
+                        <li><span class="offering-dot-thrive"></span> The Forest Immersion (3 days) — SGD $5,500–$7,500</li>
+                        <li><span class="offering-dot-thrive"></span> The 7-Day Reset — SGD $12,000–$18,000</li>
+                        <li><span class="offering-dot-thrive"></span> The Coastal Clarity Retreat — SGD $6,000–$8,500</li>
+                        <li><span class="offering-dot-thrive"></span> Yoga, Breathwork &amp; Meditation Programs</li>
+                        <li><span class="offering-dot-thrive"></span> Philosophy for Executives Series</li>
+                    </ul>
+                    <a href="Apex Thrive/apex_thrive_website.html" class="btn-thrive">Explore Apex Thrive →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ APPROACH ══════════════ -->
+<section id="approach" class="section approach">
+    <div class="container">
+        <div class="approach-inner">
+            <div class="approach-content fade-in">
+                <div class="eyebrow gold">
+                    <div class="eyebrow-line"></div>
+                    <span>Our Philosophy</span>
+                </div>
+                <h2>Whole-Person<br>Leadership</h2>
+                <p>
+                    Most leadership development sharpens the mind while neglecting the vessel
+                    that carries it. APEX challenges this false economy. We believe the highest
+                    performing leaders are those who develop with equal intentionality across
+                    strategic capability and holistic wellbeing.
+                </p>
+                <p>
+                    Through Apex Coaching, leaders gain the frameworks, accountability structures,
+                    and executive presence to lead with clarity at the highest levels. Through
+                    Apex Thrive, they restore the physical vitality, mental stillness, and
+                    soulful purpose that makes that leadership sustainable.
+                </p>
+                <p>
+                    Every methodology is grounded in peer-reviewed research—from Harvard Business
+                    School's leadership ROI frameworks to 40+ years of validated behavioral science,
+                    and from neuroscience-backed mindfulness protocols to evidence from 750+
+                    independent leadership studies.
+                </p>
+            </div>
+
+            <div class="pillars-visual fade-in">
+                <div class="pillar-box pillar-coaching">
+                    <span class="pillar-box-icon">🎯</span>
+                    <div class="pillar-box-title">Strategic Excellence</div>
+                    <div class="pillar-box-text">Decision-making · Executive presence · Organizational impact · Accountability systems</div>
+                </div>
+                <div class="pillar-box pillar-mind">
+                    <span class="pillar-box-icon">🧘</span>
+                    <div class="pillar-box-title">Mind</div>
+                    <div class="pillar-box-text">Meditation · Philosophy · Clarity · Mental resilience</div>
+                </div>
+                <div class="pillar-box pillar-body">
+                    <span class="pillar-box-icon">🌿</span>
+                    <div class="pillar-box-title">Body &amp; Soul</div>
+                    <div class="pillar-box-text">Yoga · Nature immersion · Breathwork · Purpose</div>
+                </div>
+                <div class="pillar-box pillar-thrive">
+                    <span class="pillar-box-icon">🏔️</span>
+                    <div class="pillar-box-title">Holistic Vitality</div>
+                    <div class="pillar-box-text">Wilderness retreats · Ancient wisdom · Peak performance · Longevity</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ EVIDENCE ══════════════ -->
+<section id="evidence" class="section evidence">
+    <div class="container">
+        <div class="evidence-header fade-in">
+            <div class="eyebrow gold" style="justify-content: center;">
+                <div class="eyebrow-line"></div>
+                <span>The Evidence Base</span>
+                <div class="eyebrow-line"></div>
+            </div>
+            <h2>Research-Validated<br>in Every Dimension</h2>
+            <p>
+                Every program, framework, and practice is grounded in peer-reviewed research
+                and validated in real-world leadership contexts.
+            </p>
+        </div>
+        <div class="evidence-grid">
+            <div class="evidence-card evidence-coaching fade-in">
+                <div class="evidence-source">Harvard Business School</div>
+                <h3>Leadership Development ROI</h3>
+                <p>65 evidence-informed strategies drawn from systematic reviews. Measurable ROI through gold-standard program design applied to every coaching engagement.</p>
+            </div>
+            <div class="evidence-card evidence-coaching fade-in">
+                <div class="evidence-source">40+ Years Research</div>
+                <h3>The Leadership Challenge®</h3>
+                <p>Validated in 750+ independent studies with 8 million respondents. Demonstrates proven impact on leader effectiveness and employee engagement.</p>
+            </div>
+            <div class="evidence-card evidence-coaching fade-in">
+                <div class="evidence-source">Meta-Analysis</div>
+                <h3>Transformational Leadership</h3>
+                <p>Medium to large effect sizes on performance, wellbeing, and organizational outcomes. The most empirically validated leadership approach in the literature.</p>
+            </div>
+            <div class="evidence-card evidence-thrive fade-in">
+                <div class="evidence-source">Li et al., 2008</div>
+                <h3>Forest Bathing &amp; Cortisol</h3>
+                <p>Nature immersion reduces cortisol by 20%, boosts NK immune cells by 40% for 30 days, and enhances creativity by 50% after just 4 days outdoors.</p>
+            </div>
+            <div class="evidence-card evidence-thrive fade-in">
+                <div class="evidence-source">Lazar et al., 2005</div>
+                <h3>Meditation &amp; Brain Structure</h3>
+                <p>Regular meditation practice increases gray matter in the prefrontal cortex by 15%, directly improving decision-making, focus, and emotional regulation.</p>
+            </div>
+            <div class="evidence-card evidence-thrive fade-in">
+                <div class="evidence-source">Lehrer et al., 2020</div>
+                <h3>Breathwork &amp; HRV</h3>
+                <p>Structured breathwork improves Heart Rate Variability by 30%, directly enhancing nervous system resilience, stress response, and peak performance states.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ TESTIMONIAL ══════════════ -->
+<section class="testimonial">
+    <div class="testimonial-inner fade-in">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">
+            In nature, nothing is perfect and everything is perfect. Trees can be contorted,
+            bent in weird ways, and they're still beautiful. Leadership is the same—it's about
+            finding your natural form and thriving within it.
+        </p>
+        <div class="testimonial-author">Sharad Somani &nbsp;·&nbsp; Founder, APEX</div>
+    </div>
+</section>
+
+<!-- ══════════════ CTA ══════════════ -->
+<section id="contact" class="cta-section">
+    <div class="cta-inner fade-in">
+        <div class="eyebrow gold" style="justify-content: center; margin-bottom: 1.5rem;">
+            <div class="eyebrow-line"></div>
+            <span>Begin Your Journey</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2>Ready to Lead at<br>Your Full Potential?</h2>
+        <p>
+            Whether you're seeking sharper strategic clarity through executive coaching or
+            deeper renewal through our wellness retreats—your journey with APEX starts
+            with a single conversation.
+        </p>
+        <div class="cta-buttons">
+            <a href="mailto:contact@apexleadership.sg" class="cta-btn-coaching">
+                Apex Coaching Consultation
+            </a>
+            <a href="mailto:thrive@apexleadership.sg" class="cta-btn-thrive">
+                Apex Thrive Enquiry
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand-name">APEX</div>
+                <div class="footer-brand-tagline">Leadership &amp; Wellness · Singapore</div>
+                <p class="footer-brand-desc">
+                    Complete leadership development for executives who refuse to choose between
+                    performance and wellbeing. Founded by Sharad Somani—Partner, KPMG Singapore.
+                </p>
+            </div>
+            <div>
+                <div class="footer-col-title coaching-accent">Apex Coaching</div>
+                <ul class="footer-links">
+                    <li><a href="Apex Coaching /apex_leadership_website.html">Executive Coaching</a></li>
+                    <li><a href="Apex Coaching /apex_leadership_website.html#programs">Leadership Workshops</a></li>
+                    <li><a href="Apex Coaching /apex_leadership_website.html#programs">2-Day Intensive</a></li>
+                    <li><a href="Apex Coaching /apex_landing_page.html">Schedule Consultation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title thrive-accent">Apex Thrive</div>
+                <ul class="footer-links">
+                    <li><a href="Apex Thrive/apex_thrive_website.html">Summit Experience</a></li>
+                    <li><a href="Apex Thrive/apex_thrive_website.html#retreats">Forest Immersion</a></li>
+                    <li><a href="Apex Thrive/apex_thrive_website.html#retreats">7-Day Reset</a></li>
+                    <li><a href="Apex Thrive/apex_thrive_website.html#practices">Yoga &amp; Meditation</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Connect</div>
+                <ul class="footer-links">
+                    <li><a href="mailto:contact@apexleadership.sg">contact@apexleadership.sg</a></li>
+                    <li><a href="mailto:thrive@apexleadership.sg">thrive@apexleadership.sg</a></li>
+                    <li><a href="#">LinkedIn — Sharad Somani</a></li>
+                    <li><a href="#">Singapore</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2026 APEX Leadership Institute. All rights reserved.</div>
+            <div class="footer-divisions">
+                <span class="footer-division-badge fd-coaching">Apex Coaching</span>
+                <span class="footer-division-badge fd-thrive">Apex Thrive</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Scroll-triggered fade-ins
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
