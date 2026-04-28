@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 2% Life</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --warm-dark: #2d2010;
+    --parchment: #f7f2e8;
+    --cream: #faf7f0;
+    --gold: #b8860b;
+    --gold-light: #d4a520;
+    --rust: #8b4513;
+    --sage: #6b7c5c;
+    --muted: #6b5e4a;
+    --divider: #d4c9b0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--warm-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 30%, rgba(184,134,11,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 40% at 80% 80%, rgba(139,69,19,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero-pct {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(7rem, 22vw, 16rem);
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(184,134,11,0.5);
+    letter-spacing: -0.02em;
+    margin-bottom: -0.1em;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+    user-select: none;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--parchment);
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+  }
+
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(247,242,232,0.65);
+    max-width: 560px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 32px auto;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.1s forwards;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.4s forwards;
+  }
+  .scroll-cue span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(247,242,232,0.35);
+  }
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(184,134,11,0.5), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 28px 40px;
+  }
+
+  .intro-block {
+    border-left: 2px solid var(--gold);
+    padding-left: 28px;
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.2s forwards;
+  }
+
+  .intro-block p {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: var(--warm-dark);
+    font-style: italic;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    margin-bottom: 72px;
+  }
+
+  .section-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--warm-dark);
+    margin-bottom: 24px;
+  }
+
+  h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: #3a2e1e;
+    margin-bottom: 20px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ── STAT CARDS ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 40px 0;
+  }
+
+  @media (max-width: 560px) {
+    .stat-grid { grid-template-columns: 1fr; }
+  }
+
+  .stat-card {
+    background: var(--warm-dark);
+    border-radius: 2px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .stat-card:hover { transform: translateY(-3px); }
+
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    margin-bottom: 10px;
+  }
+
+  .stat-desc {
+    font-family: 'Lora', serif;
+    font-size: 0.82rem;
+    color: rgba(247,242,232,0.55);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-top: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
+    padding: 36px 0;
+    margin: 56px 0;
+    text-align: center;
+  }
+
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-style: italic;
+    color: var(--warm-dark);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .pullquote cite {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    font-style: normal;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── REFLECTIONS LIST ── */
+  .reflection-list {
+    margin: 36px 0;
+    list-style: none;
+    counter-reset: reflection-counter;
+  }
+
+  .reflection-list li {
+    counter-increment: reflection-counter;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+    align-items: start;
+  }
+
+  .reflection-list li::before {
+    content: counter(reflection-counter, decimal-leading-zero);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  .reflection-content strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warm-dark);
+    margin-bottom: 6px;
+  }
+
+  .reflection-content p {
+    font-size: 0.97rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  /* ── DIVIDER ORNAMENT ── */
+  .ornament {
+    text-align: center;
+    margin: 56px 0;
+    color: var(--gold);
+    opacity: 0.35;
+    font-size: 1.2rem;
+    letter-spacing: 0.6em;
+  }
+
+  /* ── CLOSING SECTION ── */
+  .closing {
+    background: var(--warm-dark);
+    padding: 72px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(184,134,11,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .closing-inner {
+    max-width: 620px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .closing h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--parchment);
+    margin-bottom: 28px;
+    line-height: 1.35;
+  }
+
+  .closing p {
+    color: rgba(247,242,232,0.65);
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .closing-rule {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 36px auto;
+  }
+
+  .closing-final {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-style: italic;
+    color: var(--gold-light) !important;
+    opacity: 1 !important;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #130e06;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  footer p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(247,242,232,0.2);
+    margin: 0;
+  }
+
+  /* ── SCIENCE NOTE ── */
+  .science-note {
+    background: var(--parchment);
+    border: 1px solid var(--divider);
+    border-left: 3px solid var(--sage);
+    border-radius: 2px;
+    padding: 22px 24px;
+    margin: 32px 0;
+  }
+
+  .science-note-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+
+  .science-note p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.75;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50%       { opacity: 0.8; transform: scaleY(1.15); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-eyebrow">An Essay on Human Consciousness &amp; Potential</div>
+  <div class="hero-pct">2%</div>
+  <h1 class="hero-title">The 2% Life</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">
+    We are exquisitely tuned instruments in an orchestra so vast,
+    we can barely hear it. And yet — listen to what we have made
+    of our sliver of silence.
+  </p>
+  <div class="scroll-cue">
+    <span>Read</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ── BODY ── -->
+<main>
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="intro-block reveal">
+    <p>Human life is, at its core, a story of potential — quietly unfolding within the narrowest of windows. We are conscious beings in an almost incomprehensibly vast universe, yet we perceive, process, and interact with only the thinnest sliver of what actually exists. I call this the 2% life — and I mean it not as a lament, but as a wonder.</p>
+  </div>
+
+  <!-- SECTION 1: THE SCIENCE -->
+  <div class="section reveal">
+    <div class="section-label">The Science of Our Limits</div>
+    <h2>Designed to see <em>almost nothing</em></h2>
+    <p>
+      Consider the electromagnetic spectrum — the full range of energy and light that pervades our universe, from radio waves longer than a football field to gamma rays smaller than an atom's nucleus. Where does human vision sit within this grand continuum?
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-number">0.0035%</div>
+        <div class="stat-label">Of Light We Can See</div>
+        <p class="stat-desc">The human eye detects only a narrow band of wavelengths — 380 to 700 nanometers — out of the entire electromagnetic spectrum. The rest: radio waves, microwaves, X-rays, gamma rays — invisible to us entirely.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5%</div>
+        <div class="stat-label">Of the Universe Visible</div>
+        <p class="stat-desc">Normal matter — stars, planets, everything we can observe — makes up only ~5% of the universe. The remaining 95% is dark matter and dark energy: unknown, unseeable, beyond our instruments.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">20–20K</div>
+        <div class="stat-label">Hz — Our Hearing Window</div>
+        <p class="stat-desc">Humans hear between 20 Hz and 20,000 Hz. Elephants feel infrasound at 14 Hz. Bats navigate at 100,000 Hz. Dolphins echolocate beyond 150,000 Hz. The acoustic universe is orders of magnitude richer than what we can hear.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2%</div>
+        <div class="stat-label">Body Mass, 20% Energy</div>
+        <p class="stat-desc">The brain is ~2% of our body mass yet consumes 20% of our energy — running at near full capacity at all times. Its untapped dimension is not unused matter, but unexplored cognitive and creative potential.</p>
+      </div>
+    </div>
+
+    <div class="science-note">
+      <div class="science-note-label">A note on the brain</div>
+      <p>The popular idea that we use only "10% of our brain" is scientifically debunked — neuroscience confirms the entire brain is active, even during sleep. However, the spirit of the insight holds: our <em>cognitive and creative potential</em> — the depth of learning, wisdom, compassion, and ingenuity we are capable of — remains vastly underexplored. As William James wrote in 1908, "we are making use of only a small part of our possible mental and physical resources." The frontier is not in our neurons. It is in how we use them.</p>
+    </div>
+
+    <p>
+      The pattern is unmistakable. Across every dimension — sight, sound, the cosmos itself — we operate within a remarkably compressed bandwidth. The universe speaks in a language of infinite frequency, and we hear, at best, a few notes of one octave.
+    </p>
+  </div>
+
+  <div class="pullquote reveal">
+    <p>"It is embarrassing that 95% of the universe is unaccounted for. We confront not one mystery, but two: dark matter and dark energy — the known unknown, and the unknown unknown."</p>
+    <cite>Martin J. Rees, Institute of Astronomy, Cambridge</cite>
+  </div>
+
+  <!-- SECTION 2: THE PHILOSOPHY -->
+  <div class="section reveal">
+    <div class="section-label">The Philosophy of Constraints</div>
+    <h2>Less is not a limitation.<br/>It is <em>the design.</em></h2>
+    <p>
+      Here is the extraordinary thing: armed with this microscopic slice of perception — this 2% access to the vast theatre of existence — human beings have built civilisations, composed symphonies, cured diseases, landed on the moon, and written poetry that makes strangers weep across centuries.
+    </p>
+    <p>
+      This is not despite our limitations. It may be <em>because</em> of them. Constraints focus. Narrowness sharpens. The very fact that we cannot hear a bat's echolocation or see an X-ray with our naked eye has pushed us to build the instruments, develop the mathematics, and cultivate the curiosity to understand what lies beyond. Our 2% window has been the launchpad for a 100% imagination.
+    </p>
+    <p>
+      The question then is not: how do we transcend our limits? The question is: how do we live more beautifully, more intentionally, more gratefully — within them?
+    </p>
+  </div>
+
+  <div class="ornament reveal">✦ &nbsp;&nbsp; ✦ &nbsp;&nbsp; ✦</div>
+
+  <!-- SECTION 3: REFLECTIONS -->
+  <div class="section reveal">
+    <div class="section-label">Five Reflections</div>
+    <h2>What the 2% teaches us<br/>about <em>living fully</em></h2>
+
+    <ol class="reflection-list">
+      <li>
+        <div class="reflection-content">
+          <strong>Less is more</strong>
+          <p>The universe has given us a narrow aperture — and through it, we have seen everything that matters. Simplicity is not poverty; it is precision. The most profound ideas, the most lasting art, the most healing relationships — they emerge from focus, not abundance. You do not need access to the whole electromagnetic spectrum to witness a sunset that breaks you open.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reflection-content">
+          <strong>Innovation lives in the spark, not the grind</strong>
+          <p>The greatest leaps of human ingenuity — Newton beneath an apple tree, Archimedes in a bath, Einstein on a tramcar — arrived not in marathon labour but in singular moments of illuminated clarity. Our brains, running at full efficiency on 20% of our body's energy, do their most astonishing work in the white space between effort. Rest is not the enemy of creativity. It is its natural habitat.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reflection-content">
+          <strong>Productive busyness is not the measure of a life</strong>
+          <p>If our senses absorb a fraction of what exists, and our waking hours are a fraction of all time, then filling every moment with measurable output is not wisdom — it is noise. The richest moments of a life are often the unscheduled ones: a conversation that drifts, a walk with no destination, a silence shared with someone you love.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reflection-content">
+          <strong>Humility is not weakness — it is accuracy</strong>
+          <p>When 95% of the universe is literally beyond our detection, intellectual humility is not a virtue we aspire to — it is a scientific fact we are obliged to accept. We know almost nothing. And yet, with that almost nothing, we have found meaning, purpose, connection, and love. This is not cause for despair. It is cause for astonishment.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reflection-content">
+          <strong>Gratitude is the only rational response</strong>
+          <p>We are, as Carl Sagan observed, a way for the cosmos to know itself — specks of stardust arranged, briefly and improbably, into consciousness. Given what we cannot see, cannot hear, and cannot know, the fact that we can feel wonder at all is extraordinary. Living with gratitude is not a spiritual platitude. It is the only proportionate response to the gift of existing in the 2% at all.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+</div><!-- /container -->
+
+<!-- CLOSING -->
+<section class="closing reveal">
+  <div class="closing-inner">
+    <h2>What we know, see, and produce — is not the measure of a life.</h2>
+    <p>The instruments on our dashboard — our degrees, our deals, our data, our visible-light achievements — capture, at best, a few percent of who we are and what existence is. The real life is lived in the margins of the measurable: in how we love, how we laugh, how we sit with uncertainty, how we extend grace to those who see even less of the picture than we do.</p>
+    <div class="closing-rule"></div>
+    <p class="closing-final">How we live, love, and laugh — that is the 100% life.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>The 2% Life &nbsp;·&nbsp; An Essay on Consciousness, Humility &amp; Gratitude</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
