@@ -434,6 +434,184 @@
     line-height: 1.75;
   }
 
+  /* ── SITE NAV ── */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    background: rgba(29, 16, 8, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,134,11,0.15);
+  }
+
+  .site-nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 4px;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .site-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .site-nav-links a {
+    color: rgba(247,242,232,0.6);
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .site-nav-links a:hover { color: var(--gold-light); }
+
+  .site-nav-links a.nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .site-nav-links a.nav-back::before {
+    content: '←';
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+
+  .site-nav-links a.nav-back:hover::before {
+    transform: translateX(-3px);
+  }
+
+  /* ── RICH FOOTER ── */
+  .site-footer {
+    background: #0f0a04;
+    padding: 3.5rem 0 2rem;
+    border-top: 1px solid rgba(184,134,11,0.2);
+  }
+
+  .site-footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  .site-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .site-footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 4px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .site-footer-tagline {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    color: rgba(247,242,232,0.25);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .site-footer-desc {
+    font-family: 'Lora', serif;
+    font-size: 0.85rem;
+    color: rgba(247,242,232,0.35);
+    line-height: 1.8;
+    max-width: 280px;
+  }
+
+  .site-footer-nav-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .site-footer-links {
+    list-style: none;
+  }
+
+  .site-footer-links li {
+    margin-bottom: 0.6rem;
+  }
+
+  .site-footer-links a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(247,242,232,0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .site-footer-links a:hover { color: var(--gold-light); }
+
+  .site-footer-bottom {
+    border-top: 1px solid rgba(247,242,232,0.05);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .site-footer-copy {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(247,242,232,0.18);
+    margin: 0;
+  }
+
+  .site-footer-essay-credit {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(184,134,11,0.4);
+  }
+
+  @media (max-width: 600px) {
+    .site-nav-links { gap: 1.2rem; }
+    .site-footer-row { flex-direction: column; }
+    .site-footer-bottom { flex-direction: column; text-align: center; }
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -462,6 +640,18 @@
 </style>
 </head>
 <body>
+
+<!-- ── SITE NAV ── -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="site-nav-logo">APEX</a>
+    <ul class="site-nav-links">
+      <li><a href="index.html" class="nav-back">All Essays</a></li>
+      <li><a href="../index.html#divisions">Our Divisions</a></li>
+      <li><a href="../index.html#contact">Work With Us</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- ── HERO ── -->
 <section class="hero">
@@ -605,8 +795,45 @@
 
 </main>
 
-<footer>
-  <p>The 2% Life &nbsp;·&nbsp; An Essay on Consciousness, Humility &amp; Gratitude</p>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-row">
+      <div>
+        <a href="../index.html" class="site-footer-brand">APEX</a>
+        <div class="site-footer-tagline">Leadership &amp; Wellness · Singapore</div>
+        <p class="site-footer-desc">
+          Complete leadership development for executives who refuse to choose between
+          performance and wellbeing. Founded by Sharad Somani — Partner, KPMG Singapore.
+        </p>
+      </div>
+      <div>
+        <div class="site-footer-nav-title">Essays</div>
+        <ul class="site-footer-links">
+          <li><a href="index.html">All Perspectives</a></li>
+          <li><a href="the-2-percent-life.html">The 2% Life</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="site-footer-nav-title">Divisions</div>
+        <ul class="site-footer-links">
+          <li><a href="../Apex Coaching /apex_leadership_website.html">Apex Coaching</a></li>
+          <li><a href="../Apex Thrive/apex_thrive_website.html">Apex Thrive</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="site-footer-nav-title">Connect</div>
+        <ul class="site-footer-links">
+          <li><a href="../index.html#contact">Work With Us</a></li>
+          <li><a href="mailto:contact@apexleadership.sg">contact@apexleadership.sg</a></li>
+          <li><a href="https://www.linkedin.com/in/sharadsomani" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p class="site-footer-copy">© 2026 APEX Leadership Institute. All rights reserved.</p>
+      <div class="site-footer-essay-credit">The 2% Life &nbsp;·&nbsp; An Essay on Consciousness, Humility &amp; Gratitude</div>
+    </div>
+  </div>
 </footer>
 
 <script>
