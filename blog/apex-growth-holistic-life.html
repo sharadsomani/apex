@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ten principles for holistic living — the APEX GROWTH framework by Sharad Somani. A philosophy of cherishing life through Acceptance, Presence, Enthusiasm, eXpression, Gratitude, Respect, Optimism, Wholeness, Trust, and Humour." />
+  <title>APEX GROWTH: Ten Things to Cherish for a Holistic Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A96E;
+      --gold-light: #E8D5AF;
+      --deep: #0F0F1A;
+      --navy: #1A1A2E;
+      --ink: #2C2C3A;
+      --warm-white: #FAF8F3;
+      --muted: #7A7A8A;
+      --accent: #6B4C3B;
+      --border: rgba(201,169,110,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--deep);
+      color: var(--warm-white);
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,15,26,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links li:last-child { display: none; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 96px 48px 80px;
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .hero-symbol {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+    .hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+    }
+    .hero-meta span { color: var(--gold); opacity: 0.6; }
+    .hero-divider {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--border), transparent);
+      margin: 48px auto 0;
+    }
+
+    /* ── ACRONYM CARD ── */
+    .acronym-wrap {
+      max-width: 760px;
+      margin: 64px auto;
+      padding: 0 48px;
+    }
+    @media (max-width: 640px) { .acronym-wrap { padding: 0 20px; } }
+    .acronym-card {
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 40px 48px;
+      position: relative;
+    }
+    .acronym-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+    .acronym-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .acronym-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 28px;
+    }
+    .acronym-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 500px) { .acronym-grid { grid-template-columns: repeat(2, 1fr); } }
+    .acronym-item {
+      background: var(--deep);
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    .a-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .a-word {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .acronym-note {
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 48px 96px;
+    }
+    @media (max-width: 640px) { .article { padding: 0 20px 72px; } }
+
+    .intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── PRINCIPLE ── */
+    .principle {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .principle:last-child { border-bottom: none; }
+
+    .p-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .p-num {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+    .p-title-block {}
+    .p-letter {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .p-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .p-tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 6px;
+    }
+
+    .principle p {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .principle p:last-child { margin-bottom: 0; }
+
+    .pullquote {
+      margin: 28px 0;
+      padding: 20px 24px;
+      border-left: 2px solid var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      background: rgba(201,169,110,0.04);
+    }
+
+    /* ── CLOSING ── */
+    .closing {
+      max-width: 700px;
+      margin: 0 auto 96px;
+      padding: 64px 48px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    @media (max-width: 640px) { .closing { padding: 40px 20px; margin: 0 20px 64px; } }
+    .closing-symbol {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      opacity: 0.4;
+      letter-spacing: 0.3em;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .closing h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .closing p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 56px 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    @media (max-width: 640px) {
+      footer { grid-template-columns: 1fr; padding: 40px 20px; }
+    }
+    .foot-col h4 {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .foot-col ul { list-style: none; }
+    .foot-col li { margin-bottom: 10px; }
+    .foot-col a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s;
+    }
+    .foot-col a:hover { color: var(--gold); }
+    .foot-copy {
+      border-top: 1px solid var(--border);
+      padding: 24px 48px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    @media (max-width: 640px) { .foot-copy { padding: 20px; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.aclaim.asia/index.html" class="nav-brand">APEX</a>
+  <ul class="nav-links">
+    <li><a href="https://www.aclaim.asia/blog/index.html">All Essays</a></li>
+    <li><a href="https://www.aclaim.asia/index.html#divisions">Our Divisions</a></li>
+    <li><a href="https://www.aclaim.asia/index.html#contact">Work With Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">Wellness &amp; Holistic Living · APEX Thrive</p>
+  <div class="hero-symbol">10</div>
+  <h1>APEX GROWTH: Ten Things to<br/>Cherish for a Holistic Life</h1>
+  <p class="hero-quote">A philosophy of living that invites you to grow — not through striving, but through cherishing what already is.</p>
+  <div class="hero-meta">
+    Sharad Somani <span>·</span> 10 min read
+  </div>
+  <div class="hero-divider"></div>
+</header>
+
+<!-- ACRONYM -->
+<div class="acronym-wrap">
+  <div class="acronym-card">
+    <p class="acronym-label">The Framework</p>
+    <p class="acronym-title">Remember it as: APEX GROWTH</p>
+    <div class="acronym-grid">
+      <div class="acronym-item"><span class="a-letter">A</span><span class="a-word">Acceptance</span></div>
+      <div class="acronym-item"><span class="a-letter">P</span><span class="a-word">Presence</span></div>
+      <div class="acronym-item"><span class="a-letter">E</span><span class="a-word">Enthusiasm</span></div>
+      <div class="acronym-item"><span class="a-letter">X</span><span class="a-word">eXpression</span></div>
+      <div class="acronym-item"><span class="a-letter">G</span><span class="a-word">Gratitude</span></div>
+      <div class="acronym-item"><span class="a-letter">R</span><span class="a-word">Respect</span></div>
+      <div class="acronym-item"><span class="a-letter">O</span><span class="a-word">Optimism</span></div>
+      <div class="acronym-item"><span class="a-letter">W</span><span class="a-word">Wholeness</span></div>
+      <div class="acronym-item"><span class="a-letter">T</span><span class="a-word">Trust</span></div>
+      <div class="acronym-item"><span class="a-letter">H</span><span class="a-word">Humour</span></div>
+    </div>
+    <p class="acronym-note">Four principles have been gently reframed to unlock the acronym — Presence (Present), Enthusiasm (Purpose), eXpression (Love), Wholeness (Fulfilment) — while preserving the spirit of each entirely.</p>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="intro">We spend so much of our lives in pursuit — of success, of certainty, of the next milestone. Yet the most profound wisdom traditions, from the Upanishads to the Stoics, point us toward the same quiet truth: a rich, meaningful life is not assembled from achievements. It is woven from moments we choose to cherish.</p>
+
+  <p style="color:rgba(255,255,255,0.55); margin-bottom:40px; font-size:0.97rem;">What follows is not a self-improvement checklist. It is an invitation — to pause, to soften, and to recognise ten attributes that, when genuinely embodied, transform the texture of everyday life. Together they form the <strong style="color:#fff;">APEX GROWTH</strong> philosophy: a reminder that our highest potential blooms not from striving harder, but from living more fully. Carry these ten as companions, not obligations. There is no "should" in this practice — only possibility.</p>
+
+  <!-- 1. ACCEPTANCE -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">1</div>
+      <div class="p-title-block">
+        <p class="p-letter">A — APEX GROWTH</p>
+        <h2 class="p-title">Acceptance</h2>
+        <p class="p-tagline">No judgement. No labels. Just presence.</p>
+      </div>
+    </div>
+    <p>Acceptance is perhaps the most liberating gift we can offer ourselves and those around us. It asks us to release the habit of categorising everything as good or bad, success or failure, worthy or unworthy. Life arrives as it is — not as we wished it to be.</p>
+    <p>When we accept the people closest to us exactly as they are — recognising that each soul is on its own unique, unrepeatable journey — we step out of the exhausting role of master or judge, and into the far more nourishing role of compassionate companion. We stop demanding that others match our blueprint and instead walk beside them with open hands.</p>
+    <div class="pullquote">There is no "should" — only "could." Replace obligation with possibility, and watch relationships transform.</div>
+    <p>Acceptance is not passivity. It is the courageous act of meeting reality without resistance — and from that steadiness, choosing how to respond with wisdom and love.</p>
+  </div>
+
+  <!-- 2. PRESENCE -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">2</div>
+      <div class="p-title-block">
+        <p class="p-letter">P — APEX GROWTH</p>
+        <h2 class="p-title">Presence</h2>
+        <p class="p-tagline">The past is memory. The future, imagination. Now is life.</p>
+      </div>
+    </div>
+    <p>The mind is a brilliant time-traveller — perpetually shuttling between regrets about yesterday and anxieties about tomorrow. Yet both destinations are, in truth, unreachable. The only moment where life actually occurs is right here, right now.</p>
+    <p>Ancient wisdom and modern neuroscience agree: when we dwell in the past, we suffer; when we project too far into the future, we worry. The present moment, by contrast, carries a quiet completeness. Everything in this vast, intricate universe is unfolding exactly as it must — and we are each actors in this cosmic drama, called only to play our part as faithfully and fully as we can in this instant.</p>
+    <div class="pullquote">You cannot rewrite yesterday, nor draft tomorrow. You can only inhabit this breath, this exchange, this glorious unrepeatable now.</div>
+    <p>Practising presence doesn't require a meditation cushion. It requires only the gentle discipline of returning — again and again — to what is actually in front of you.</p>
+  </div>
+
+  <!-- 3. ENTHUSIASM -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">3</div>
+      <div class="p-title-block">
+        <p class="p-letter">E — APEX GROWTH</p>
+        <h2 class="p-title">Enthusiasm</h2>
+        <p class="p-tagline">Find what sets you alight — and tend that flame.</p>
+      </div>
+    </div>
+    <p>The word <em>enthusiasm</em> descends from the Greek <em>entheos</em> — to be filled with the divine. When we are genuinely enthusiastic, we are not merely energetic; we are aligned. We have found the thread between who we are and what we are here to do.</p>
+    <p>Ask yourself the most important question in this list: What is the one thing — or the few things — I could do every single day without fatigue? What would make me spring out of bed not because I have to, but because I cannot wait to begin? That is your purpose calling. It may not look like a job title or a grand mission. It may be as intimate as the way you listen, the garden you tend, the conversations you unlock in others.</p>
+    <div class="pullquote">Purpose is not discovered in a single revelation. It is uncovered, patiently, in the repeated acts of doing what makes you feel most alive.</div>
+    <p>Follow the enthusiasm. It is the body's truest compass.</p>
+  </div>
+
+  <!-- 4. EXPRESSION OF LOVE -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">4</div>
+      <div class="p-title-block">
+        <p class="p-letter">X — APEX GROWTH</p>
+        <h2 class="p-title">eXpression of Love</h2>
+        <p class="p-tagline">Love is not a feeling held privately. It is an act done openly.</p>
+      </div>
+    </div>
+    <p>Love is the force that underpins every other principle on this list. Without it, acceptance becomes mere tolerance; gratitude becomes hollow performance; respect becomes protocol. Love is what gives this entire framework its warmth and its staying power.</p>
+    <p>Begin with yourself. Nourish the inner child — the part of you that still needs gentleness, play, and reassurance. Then let love radiate outward: celebrate the successes of others without competition, practise kindness as a daily discipline, and cultivate the radical notion that humanity is one collective, each member worthy of care.</p>
+    <div class="pullquote">The love you express — in small moments of kindness, in the way you celebrate others, in how you speak to yourself — is the love that returns to you, multiplied.</div>
+    <p>Send good energy. Wish others well, especially those who have wounded you. It is not weakness — it is the highest form of strength.</p>
+  </div>
+
+  <!-- 5. GRATITUDE -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">5</div>
+      <div class="p-title-block">
+        <p class="p-letter">G — APEX GROWTH</p>
+        <h2 class="p-title">Gratitude</h2>
+        <p class="p-tagline">Count your blessings — and discover they are countless.</p>
+      </div>
+    </div>
+    <p>From the very first breath of life to its final exhalation, we are held in a web of extraordinary generosity. The planet nourishes us with air, water, and food. Families shape us, strangers sustain us, and a billion small kindnesses carry us forward every single day — most of them unnoticed.</p>
+    <p>Gratitude is the practice of noticing. Not the grand gestures, but the ordinary miracles: a warm meal, a child's laughter, the reliable rhythm of your own heartbeat. Each moment of sincere gratitude recalibrates our inner world. It replaces the scarcity story — "I don't have enough, I am not enough" — with an experience of abundance that no external circumstance can manufacture.</p>
+    <div class="pullquote">Gratitude is not a feeling you wait to have. It is a discipline you choose to practise — and the feeling reliably follows.</div>
+    <p>Begin small. Three things each morning. Let the list grow longer as your eyes, slowly, begin to adjust to all the light.</p>
+  </div>
+
+  <!-- 6. RESPECT -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">6</div>
+      <div class="p-title-block">
+        <p class="p-letter">R — APEX GROWTH</p>
+        <h2 class="p-title">Respect</h2>
+        <p class="p-tagline">Honour the world — and yourself within it.</p>
+      </div>
+    </div>
+    <p>Respect is the invisible architecture of a good life. When we bring it to our interactions — with nature, with the planet, with colleagues, with the stranger across the table — we build an environment where trust can take root and meaning can flourish. Respect dissolves the corrosive spirals of jealousy, mistrust, and chronic criticism that quietly drain the joy from our days.</p>
+    <p>Crucially, respect begins inward. A person who cannot treat themselves with dignity will struggle to extend it genuinely outward. Honouring your own needs, boundaries, and values is not selfishness — it is the foundation from which all authentic respect radiates.</p>
+    <div class="pullquote">When respect becomes a habit rather than a gesture, relationships cease to be transactions and become sanctuaries.</div>
+    <p>Extend it to the earth beneath your feet, the food on your plate, the colleague who thinks differently from you. The world you inhabit reflects the respect you bring to it.</p>
+  </div>
+
+  <!-- 7. OPTIMISM -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">7</div>
+      <div class="p-title-block">
+        <p class="p-letter">O — APEX GROWTH</p>
+        <h2 class="p-title">Optimism</h2>
+        <p class="p-tagline">The glass is not half empty. It is overflowing with possibility.</p>
+      </div>
+    </div>
+    <p>Life will not always match our vision of it. Plans will unravel, seasons will turn cold, people will disappoint, and we will surprise ourselves with our own fallibility. Optimism is not the refusal to acknowledge this. It is the trained capacity to see — always — that something good is possible, and that difficulty is rarely the final chapter.</p>
+    <p>With the gift of hindsight, most of us can point to events that felt catastrophic at the time but proved to be among the greatest redirections of our lives. The job we didn't get led us to the career we were meant for. The relationship that ended opened us to ourselves. Optimism is, at its core, a form of profound spiritual trust: the belief that the arc of life, however jagged, bends toward growth.</p>
+    <div class="pullquote">Silver linings are not consolation prizes. They are the real story — and with practice, you will see them not in retrospect, but in real time.</div>
+    <p>Nurture optimism as you would a garden — deliberately, patiently, with the knowledge that what you tend will grow.</p>
+  </div>
+
+  <!-- 8. WHOLENESS -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">8</div>
+      <div class="p-title-block">
+        <p class="p-letter">W — APEX GROWTH</p>
+        <h2 class="p-title">Wholeness</h2>
+        <p class="p-tagline">Fulfilment is not what you achieve. It is how completely you inhabit each moment.</p>
+      </div>
+    </div>
+    <p>We are conditioned to defer fulfilment — to a promotion, a relationship, a number in a bank account. "I will feel fulfilled when..." Yet the research, the philosophy, and most human experience confirm that fulfilment is not a destination. It is a quality of attention.</p>
+    <p>To feel whole is to ascribe meaning to what you are already doing. The executive who sees their work as service rather than performance. The parent who experiences tucking in a child not as a task but as a sacred ritual. Wholeness emerges when we connect the mundane to the meaningful — when we can see that even ordinary days, lived attentively, are "living the dream."</p>
+    <div class="pullquote">Each moment you are fully present in and fully committed to is a moment of fulfilment — regardless of its size or significance to anyone else.</div>
+  </div>
+
+  <!-- 9. TRUST -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">9</div>
+      <div class="p-title-block">
+        <p class="p-letter">T — APEX GROWTH</p>
+        <h2 class="p-title">Trust</h2>
+        <p class="p-tagline">The universe is not indifferent. It is conspiring in your favour.</p>
+      </div>
+    </div>
+    <p>Of all ten principles, Trust may be the most quietly powerful. It is the practice of believing — even when circumstances resist easy interpretation — that life is purposeful, that the universe is benevolent, and that every experience, however unwelcome, is ultimately navigating us toward our highest good.</p>
+    <p>Trust is not naïveté. It is the hard-won courage to release control of what was never ours to control. Every person who enters our life, every unexpected turn, every apparent setback carries a signal, a lesson, a gift — though we may need time and distance to unwrap it. The difficult boss who sharpened your resilience. The opportunity that fell through and opened a better door. In retrospect, the breadcrumbs of grace become visible.</p>
+    <div class="pullquote">Trust the process. You were not placed here by accident, and you are not being led astray.</div>
+  </div>
+
+  <!-- 10. HUMOUR -->
+  <div class="principle">
+    <div class="p-header">
+      <div class="p-num">10</div>
+      <div class="p-title-block">
+        <p class="p-letter">H — APEX GROWTH</p>
+        <h2 class="p-title">Humour</h2>
+        <p class="p-tagline">Life is too important to take too seriously.</p>
+      </div>
+    </div>
+    <p>Humour is perhaps the most underrated spiritual practice. In every wisdom tradition — Sufism's dancing dervishes, the laughing Buddha, the Zen master's unexpected punchline — levity is understood not as an escape from life's depth but as a doorway into it. To hold difficulties lightly is not to deny their reality; it is to deny them the power to crush us.</p>
+    <p>Making light of a difficult situation requires genuine skill. It asks for a healthy reservoir of optimism and a practised ability to see the absurdity woven into even the most earnest human dramas. Develop this muscle deliberately. Seek out laughter. Become someone who makes the room feel lighter simply by entering it. Not because life is trivial, but because joy, like love, is a choice — one we can make even on the hardest days.</p>
+    <div class="pullquote">You don't stop laughing when you grow old. You grow old when you stop laughing.</div>
+  </div>
+
+</article>
+
+<!-- CLOSING -->
+<div class="closing" style="max-width:700px;margin:0 auto 96px;padding:64px 48px;border:1px solid rgba(201,169,110,0.2);text-align:center;">
+  <span class="closing-symbol">✦ ✦ ✦</span>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;font-style:italic;color:#fff;margin-bottom:16px;">Your APEX GROWTH Journey</h3>
+  <p style="font-size:0.9rem;color:rgba(255,255,255,0.45);max-width:500px;margin:0 auto 0;line-height:1.8;">These ten principles are not a programme to complete but a way of living to deepen — one conversation, one breath, one moment of genuine presence at a time. Choose one today. Just one. Let it live in your awareness for a week. Notice what shifts. A holistic life is woven quietly, and with love, from exactly these kinds of small, deliberate choices.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-col">
+    <h4>Essays</h4>
+    <ul>
+      <li><a href="https://www.aclaim.asia/blog/index.html">All Perspectives</a></li>
+      <li><a href="https://www.aclaim.asia/blog/the-2-percent-life.html">The 2% Life</a></li>
+      <li><a href="https://www.aclaim.asia/blog/apex-growth-holistic-life.html">APEX GROWTH</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Divisions</h4>
+    <ul>
+      <li><a href="https://www.aclaim.asia/Apex Coaching /apex_leadership_website.html">Apex Coaching</a></li>
+      <li><a href="https://www.aclaim.asia/Apex Thrive/apex_thrive_website.html">Apex Thrive</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://www.aclaim.asia/index.html#contact">Work With Us</a></li>
+      <li><a href="mailto:contact@apexleadership.sg">contact@apexleadership.sg</a></li>
+      <li><a href="https://www.linkedin.com/in/sharadsomani">LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="foot-copy">
+  <span>© 2026 APEX Leadership Institute. All rights reserved.</span>
+  <span>APEX GROWTH · An Essay on Holistic Living</span>
+</div>
+
+</body>
+</html>
